@@ -29,13 +29,26 @@ sub colorize {
 		'w'		=> "\e[37m",     #white
 		'W'		=> "\e[1;37m",   #white (BOLD)
 	);
-	return "$color{$c}$msg\e[0m";
+
+	if ($c eq "*") {
+		my @rainbow = ('R','G','Y','B','M','C');
+		my $i = 0;
+		my $msgc = "";
+		foreach my $char (split //, $msg) {
+			$msgc = $msgc . "$color{$rainbow[$i%6]}$char";
+			$i++;
+		}
+		return "$msgc\e[0m";
+	} else {
+		return "$color{$c}$msg\e[0m";
+	}
 }
 
 sub cprintf {
 	($_) = @_;
-	s/(#[KRGYBMPCW]\{)(.*?)(\})/colorize($1, $2)/egi;
+	s/(#[KRGYBMPCW*]\{)(.*?)(\})/colorize($1, $2)/egi;
 	print $_;
 }
 
 cprintf("This is a sample message with #R{red bold text} and #B{blue bold text} and #m{magenta text} and normal text.\n");
+cprintf("And by request #*{RAINBOW TEXT!!!!}!!!\n");
