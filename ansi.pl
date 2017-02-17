@@ -36,7 +36,9 @@ sub colorize {
 		my $msgc = "";
 		foreach my $char (split //, $msg) {
 			$msgc = $msgc . "$color{$rainbow[$i%6]}$char";
-			$i++;
+			if ($char =~ m/\S/) {
+				$i++;
+			}
 		}
 		return "$msgc\e[0m";
 	} else {
