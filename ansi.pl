@@ -8,7 +8,7 @@ use warnings;
 
 sub colorize {
 	my ($c, $msg) = @_;
-	$c =~ /(\w)/; $c=$1;
+	$c = substr $c, 1, 1;
 	my %color = (
 		'k'		=> "\e[30m",     #black
 		'K'		=> "\e[1;30m",   #black (BOLD)
