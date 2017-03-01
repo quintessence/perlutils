@@ -14,12 +14,12 @@ sub colorize {
 		'K'		=> "\e[1;30m",   #black (BOLD)
 		'r'		=> "\e[31m",     #red
 		'R'		=> "\e[1;31m",   #red (BOLD)
-		'b'		=> "\e[32m",     #blue
-		'B'		=> "\e[1;32m",   #blue (BOLD)
+		'b'		=> "\e[34m",     #blue
+		'B'		=> "\e[1;34m",   #blue (BOLD)
 		'y'		=> "\e[33m",     #yellow
 		'Y'		=> "\e[1;33m",   #yellow (BOLD)
-		'g'		=> "\e[34m",     #green
-		'G'		=> "\e[1;34m",   #green (BOLD)
+		'g'		=> "\e[32m",     #green
+		'G'		=> "\e[1;32m",   #green (BOLD)
 		'm'		=> "\e[35m",     #magenta
 		'M'		=> "\e[1;35m",   #magenta (BOLD)
 		'p'		=> "\e[35m",     #purple (alias for magenta)
